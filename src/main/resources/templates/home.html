@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입 예제</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <br><br>
+            <h1>회원가입</h1>
+            <form action="/" method="post">
+                <table class="table table-bordered">
+                    <tr><th width="70">ID:</th><TD><INPUT type="text" name="Id" size="13"></TD></tr>
+                    <tr><th width="70">PW:</th><TD><INPUT type="text" name="Pw" size="13"></TD></tr>
+                    <tr><th width="70">Gender:</th><td><INPUT type="radio" name="Gender">IsMan?</td></tr>
+                    <tr align="center">
+                        <td colspan="2">
+                            <input type="submit" class="btn btn-primary" value="submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div>
+            <h1>회원 리스트</h1>
+            <table class="table table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Pw</th>
+                    <th>IsMan</th>
+                </tr>
+                <tr th:each="List : ${userList}">
+                    <td th:text="${List.Id}" width="100"></td>
+                    <td th:text="${List.Pw}" width="100"></td>
+                    <td th:text="${List.Gender}" width="100"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
